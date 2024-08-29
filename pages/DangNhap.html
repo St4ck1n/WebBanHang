@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="login">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <title>Document</title>
+  </head>
+  <body ng-controller="loginController">
+    <div class="container" style="text-align: center;">
+      <div class="row">
+        <div class="col-md-6">
+            <img src="/Assignment/img/login.png" alt="">
+        </div>
+       <div class="col-md-6">
+        <form class="loginForm">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Email address"
+              ng-model="emailAddress"
+              required
+            /><br />
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Password"
+              ng-model="password"
+              required
+            /><br />
+            <input type="checkBox" />Remember me <a href="">Forgot Password</a
+            ><br />
+            <button class="btn btn-primary" ng-click="dangNhap();">
+              Sign in
+            </button>
+            <h3>OR</h3>
+            <button class="btn btn-primary">CONTINUE WITH FACEBOOK</button
+            ><br /><br />
+            <button class="btn btn-primary">CONTINUE WITH TWITTER</button>
+          </form>
+       </div>
+      </div>
+    </div>
+
+    <script src="/Angular_lib/angular-1.8.2/angular.min.js"></script>
+    <script src="/Assignment/controller/dangNhap.js"></script>
+  </body>
+</html>

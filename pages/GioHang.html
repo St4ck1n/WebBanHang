@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  </head>
+  <body ng-app="myApp">
+    <div ng-controller="myCtrl" class="container">
+      <form id="form_create_product" ng-submit="onFormSubmit($event)">
+        <h1 style="text-align: center;">Giỏ hàng</h1>
+        <div class="form-group">
+          <input
+            type="text"
+            value="{{product.id}}"
+            ng-model="product.id"
+            style="display: none"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="">Tên sản phẩm</label>
+          <input
+            type="text"
+            id="ten"
+            ng-model="product.ten"
+            value="{{product.ten}}"
+            class="form-control"
+          />
+        </div>
+         
+        <div class="form-group">
+          <label for="">Số lượng</label>
+          <input
+            type="text"
+            id="soluong"
+            ng-model="product.so_luong"
+            value="{{product.so_luong}}"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="">Giá nhập</label>
+          <input
+            type="text"
+            id="gianhap"
+            ng-model="product.gia_nhap"
+            value="{{product.gia_nhap}}"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="">Giá bán</label>
+          <input
+            type="text"
+            id="giaban"
+            ng-model="product.gia_ban"
+            value="{{product.gia_ban}}"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="">Miêu tả</label>
+          <input
+            type="text"
+            id="mieuta"
+            ng-model="product.mieu_ta"
+            value="{{product.mieu_ta}}"
+            class="form-control"
+          />
+        </div>
+        <br>
+       
+        <div style="text-align: center;">
+          <button type="submit" class="btn btn-primary">Thêm</button>
+          <button type="submit" class="btn btn-primary" ng-click="edit($index)">Sửa</button>
+        </div>
+      </form>
+      <br>
+      <table class="table">
+        <thead>
+          <tr>
+            <td>Mã</td>
+            <td>Tên</td>
+            <td>Số lượng</td>
+            <td>Giá nhập</td>
+            <td>Giá bán</td>
+            <td>Miêu tả</td>
+            <td>Edit</td>
+            <td>Delete</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="product in products">
+            <td>{{product.id}}</td>
+            <td>{{product.ten}}</td>
+            <td>{{product.so_luong}}</td>
+            <td>{{product.gia_nhap}}</td>
+            <td>{{product.gia_ban}}</td>
+            <td>{{product.mieu_ta}}</td>
+            <td>
+              <button type="button" class="btn btn-primary" ng-click="selectProduct(product)">
+                Sửa
+              </button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-danger" ng-click="delete(product)">Xoá</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <script src="/Angular_lib/angular-1.8.2/angular.js"></script>
+    <script src="/Assignment/controller/gioHang.js"></script>
+  </body>
+</html>
